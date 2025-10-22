@@ -16,6 +16,7 @@ body{
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow-x: hidden;
 }
 h1, h2, h3{
     font-family: 'Times New Roman', serif;
@@ -73,9 +74,10 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
 }
 .top-nav{
     display: flex;
@@ -306,11 +308,10 @@ a{
 /* Laptop */
 @media (max-width: 1000px) {
     .container {
-        max-width: 960px; /* Sedikit dikecilkan */
+        max-width: 960px;
     }
-    /* Ubah tata letak story-section agar lebih sederhana */
     .story-section .container {
-        grid-template-columns: 1fr 1fr; /* 2 kolom di layar yang lebih sempit */
+        grid-template-columns: 1fr 1fr;
     }
     .story-section .container .icon {
         display: none; 
@@ -325,9 +326,14 @@ a{
     /* header */
     .top-nav{
         padding: 0px;
+        overflow-x: hidden;
     }
     .nav-toggle{
         display: flex;
+    }
+    .main-header.menu-open {
+        height: 100vh;
+        overflow-y: hidden;
     }
     .nav-links{
         position: absolute;
@@ -340,7 +346,7 @@ a{
         align-items: center;
         background-color: #6e5343d0;
         transform: translateX(100%);
-        transition: transform 0.3s;
+        transition: transform 0.3s ease-in-out;
     }
     .nav-links.active{
         transform: translateX(0);
@@ -427,7 +433,7 @@ a{
         height: 60vh;
     }
     .hero-section h1{
-        font-size: 3em;
+        font-size: 2em;
     }
     .tagline{
         font-size: 1rem;
@@ -451,7 +457,7 @@ a{
         gap: 1rem;
     }
     .mini-gallery img{
-        width: 170px;
+        width: 140px;
     }
     /* Temukan Kami */
     .temukan-kami .contact-section{

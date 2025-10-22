@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.classList.remove('active');
                 navToggle.querySelector('i').classList.remove('fa-times');
                 navToggle.querySelector('i').classList.add('fa-bars');
+
+                mainHeader.classList.remove('menu-open');
             }
         }
         // Fungsi untuk membuka/menutup menu
@@ -17,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Menghetikan event agar tidak langsung menyebar ke document  (mencegah penutupan Instan)
             event.stopPropagation();
             navLinks.classList.toggle('active');
+
+            mainHeader.classList.toggle('menu-open');
             // Mengubah ikon
             const icon = navToggle.querySelector('i');
             icon.classList.toggle('fa-bars');
